@@ -44,7 +44,7 @@ public class Matcher {
             resetMatchingData();
         }
 
-        List<Person> beingMatchedThisRound = new ArrayList<Person>(stillMatching);
+        List<Person> beingMatchedThisRound = new ArrayList<>(stillMatching);
 
         Collections.sort(beingMatchedThisRound, new Comparator<Person>() {
             @Override
@@ -53,8 +53,8 @@ public class Matcher {
             }
         });
 
-        Set<Person> matchedInThisRound = new HashSet<Person>();
-        Set<OneOnOne> matches = new HashSet<OneOnOne>();
+        Set<Person> matchedInThisRound = new HashSet<>();
+        Set<OneOnOne> matches = new HashSet<>();
 
         // Create matchings (if possible) for all members who need still have teammates left to match with
         for(Person p : beingMatchedThisRound) {
@@ -76,7 +76,7 @@ public class Matcher {
         }
 
         // Randomly match up the remaining people
-        Set<Person> unMatchedInThisRound = new HashSet<Person>(organization.getEmployees());
+        Set<Person> unMatchedInThisRound = new HashSet<>(organization.getEmployees());
         unMatchedInThisRound.removeAll(matchedInThisRound);
         createRandomMatches(unMatchedInThisRound, matches);
 
@@ -111,11 +111,11 @@ public class Matcher {
      * assigned).
      */
     public void resetMatchingData() {
-        stillMatching = new HashSet<Person>(organization.getEmployees());
-        done = new HashSet<Person>();
+        stillMatching = new HashSet<>(organization.getEmployees());
+        done = new HashSet<>();
 
-        alreadyMatched = new HashMap<Person, Set<Person>>();
-        potentialMatches = new HashMap<Person, Set<Person>>();
+        alreadyMatched = new HashMap<>();
+        potentialMatches = new HashMap<>();
 
         for(Person p : organization.getEmployees()) {
             Set<Person> potentialMatchesSet = new HashSet<>();
@@ -185,12 +185,12 @@ public class Matcher {
      * defined to be any possible teammate with whom the Person has not matched with yet and someone who has not
      * already been assigned a matching fo r this round.
      *
-     * @param gettingMatched
-     * @param matched
-     * @return
+     * @param gettingMatched nonnull Person who is getting matched
+     * @param matched nonnull set of people who have been matched already in this round
+     * @return set of Person who gettingMatched can be matched with
      */
     private Set<Person> getPossibleMatches(Person gettingMatched, Set<Person> matched) {
-        Set<Person> possible = new HashSet<Person>(potentialMatches.get(gettingMatched));
+        Set<Person> possible = new HashSet<>(potentialMatches.get(gettingMatched));
         possible.removeAll(matched);
         return possible;
     }

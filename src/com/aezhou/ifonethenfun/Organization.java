@@ -21,7 +21,7 @@ public class Organization {
     public Organization(Map<String, Set<Person>> teams) {
         this.teams = teams;
 
-        employees = new HashSet<Person>();
+        employees = new HashSet<>();
         for(Set<Person> team : teams.values()){
             employees.addAll(team);
         }

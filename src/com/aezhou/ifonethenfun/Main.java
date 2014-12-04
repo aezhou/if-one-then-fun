@@ -34,7 +34,7 @@ public class Main {
 
     /**
      *
-     * @param teamsJson
+     * @param teamsJson JSONArray of teams
      * @return a map that maps a team name (String) to the set of employees in the team (Set of Person)
      *
      * This method creates a new instance of a Person if and only if the team member is a new employee (aka he/she has
