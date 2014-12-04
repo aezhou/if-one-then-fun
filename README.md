@@ -77,14 +77,14 @@ The matching protocol is as follows:
 - If there is an odd number of people, one person per week will not receive a matching. This person is randomly chosen
   from the pool of employees, and is listed as "unmatched" in the list of matchings.
 - This algorithm wants every employee to be matched with all of its teammates before allowing any employee to start the 
-  process over and have a second matching with its teammates. A threshold in the code is programmatically set such that 
-  once X% of the company has been completely matched, the matching process starts over and allows employees to have a 
+  process over and have a second matching with its teammates. A threshold in the code is set such that once X% of the 
+  company has been completely matched, the matching process starts over and allows employees to have a 
   second matching with their teammates. (An employee is considered to be completely matched if he/she has had matchings
   with all of his/her teammates, across all teams.)
 
 # Testing methodology
 Testing was done manually due to time constraints. Using the debugging tools, I could see the state of the various sets 
-at each step of the process, and manually calucated matchings and compared these to what was being outputted. I varied 
+at each step of the process, and manually calculated matchings and compared these to what was being outputted. I varied 
 the input to ensure that there were people with only one possible matching, no possible matchings, and many cross-team 
 possible matchings.
 
@@ -92,7 +92,7 @@ However, with time permitting, many different unit tests could have been written
 into various methods for ease of testing. In the Matching class, it would be easy to test both types of matching 
 (random matching and matching with a teammate whom you have not matched with before) - testing with various sizes of 
 the "matched" set and random pool (if applicable). It is also easy to test the other methods that require inputs. 
-Updating the matching table is easily verifyable if done successfully. When getting possible matches, we can vary the 
+Updating the matching table is easily to verify if done successfully. When getting possible matches, we can vary the 
 overlap between a person's potential matches and the people who have been assigned matchings for this round.
 
 Another method that needs testing is in Organization - the assigning teams method. In this case, it is important to 
