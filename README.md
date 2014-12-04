@@ -68,7 +68,8 @@ The matching protocol is as follows:
   of potential matches with teammates.
 - Each person randomly picks someone to match with from their possible matches. If one of their teammates (that they 
   haven't matched with yet) is already in a matching for this round, the teammate is not considered to be a possible 
-  match. A business match is denoted with "for team bonding" in the list of matchings.
+  match. A business match is denoted with "for ___ bonding" in the list of matchings. The black is filled in by all 
+  teams the two participants have in common.
 - Once a person has had matchings with all teammates, across all teams, they enter the random "pool" of employees. From 
   this pool, matchings are assigned randomly, and designated by the text "for fun :)" in the list of matchings.
 - If a person has potential teammates, but they have all already been assigned matchings for this round, this person 
@@ -95,7 +96,8 @@ Updating the matching table is easily verifyable if done successfully. When gett
 overlap between a person's potential matches and the people who have been assigned matchings for this round.
 
 Another method that needs testing is in Organization - the assigning teams method. In this case, it is important to 
-make sure that each person has the correct teammates in their potential teammates (and does not include themselves).
+make sure that each person has the correct teammates in their potential teammates (and does not include themselves). 
+Additionally, it is important to make sure each person has the correct teams associated with their possible teammates.
 
 Finally, we need to make sure that we are parsing the JSON file correctly. We only want one Person instance per unique
 email address. Additionally, we want to make sure that the teams are correctly created.

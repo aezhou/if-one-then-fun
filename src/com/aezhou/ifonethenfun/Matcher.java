@@ -98,7 +98,7 @@ public class Matcher {
             Person two = getRandomElement(randomPool);
             randomPool.remove(two);
 
-            matches.add(new OneOnOne(one, two, true));
+            matches.add(new OneOnOne(one, two));
         }
 
         if (randomPool.size() == 1) {
@@ -153,11 +153,13 @@ public class Matcher {
         Set<Person> possibleMatches = getPossibleMatches(gettingMatched, matched);
         Person matchedWith = possibleMatches.size() > 0 ? getRandomElement(possibleMatches) : null;
 
-        OneOnOne match = new OneOnOne(gettingMatched, matchedWith, false);
+        OneOnOne match = new OneOnOne(gettingMatched, matchedWith);
 
         if (matchedWith != null) {
             matched.add(gettingMatched);
             matched.add(matchedWith);
+
+            match = new OneOnOne(gettingMatched, matchedWith, gettingMatched.teams.get(matchedWith));
 
             updateMatchingTables(match);
         }

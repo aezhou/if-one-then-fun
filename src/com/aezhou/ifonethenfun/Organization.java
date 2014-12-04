@@ -38,9 +38,20 @@ public class Organization {
      * Iterating through the team assignments, adds new teammates to each person's list of teammates
      */
     public void assignTeammates() {
-        for (Set<Person> team: teams.values()) {
+        for (String teamName: teams.keySet()) {
+            Set<Person> team = teams.get(teamName);
             for (Person p : team) {
                 p.teammates.addAll(team);
+                for (Person x : team) {
+
+                    if (!x.equals(p)) {
+                       String setOfTeams = "";
+                        if (p.teams.containsKey(x)) {
+                            setOfTeams = p.teams.get(x) + "/";
+                        }
+                        p.teams.put(x, setOfTeams + teamName);
+                    }
+                }
                 p.teammates.remove(p);
             }
         }

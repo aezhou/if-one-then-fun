@@ -10,18 +10,23 @@ package com.aezhou.ifonethenfun;
 public class OneOnOne {
     public final Person x;
     public final Person y;
-    boolean isRandom;
+    String teamName;
 
-    public OneOnOne(Person x, Person y, boolean isRandom) {
+    public OneOnOne(Person x, Person y) {
         this.x = x;
         this.y = y;
-        this.isRandom = isRandom;
+        teamName = null;
+    }
+
+    public OneOnOne(Person x, Person y, String teamName) {
+        this.x = x;
+        this.y = y;
+        this.teamName = teamName;
     }
 
     public OneOnOne(Person x) {
         this.x = x;
         this.y = null;
-        this.isRandom = false;
     }
 
     @Override
@@ -29,6 +34,7 @@ public class OneOnOne {
         if (y == null) {
             return "unmatched: " + x.toString();
         }
-        return String.format("%s <-> %s", x.toString(), y.toString()) + (isRandom ? " for fun :)" : " for team bonding");
+        return String.format("%s <-> %s", x.toString(), y.toString()) + (teamName == null ? " for fun :)" :
+                String.format(" for %s bonding", teamName));
     }
 }

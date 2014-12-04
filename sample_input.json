@@ -40,9 +40,17 @@
     },
 
     {
-            "name": "Sad Face",
-            "members": [
-                "pizza@pie.edu"
-            ]
-        }
+        "name": "Pie",
+        "members": [
+            "pizza@pie.edu",
+            "apple@pie.edu"
+        ]
+    },
+    {
+        "name": "Circles",
+        "members": [
+             "pizza@pie.edu",
+             "apple@pie.edu"
+        ]
+    }
 ]
