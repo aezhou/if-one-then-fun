@@ -66,11 +66,6 @@ public class Matcher {
             }
         }
 
-        // Randomly match up the remaining people
-        Set<Person> unMatchedInThisRound = new HashSet<Person>(organization.getEmployees());
-        unMatchedInThisRound.removeAll(matchedInThisRound);
-        createRandomMatches(unMatchedInThisRound, matches);
-
         // From the people who were matched in non-random matches, if someone has no one left to potentially match with,
         //    move the person from stillMatching to done
         for (Person p : matchedInThisRound) {
@@ -79,6 +74,11 @@ public class Matcher {
                 done.add(p);
             }
         }
+
+        // Randomly match up the remaining people
+        Set<Person> unMatchedInThisRound = new HashSet<Person>(organization.getEmployees());
+        unMatchedInThisRound.removeAll(matchedInThisRound);
+        createRandomMatches(unMatchedInThisRound, matches);
 
         return matches;
     }
@@ -99,6 +99,10 @@ public class Matcher {
             randomPool.remove(two);
 
             matches.add(new OneOnOne(one, two, true));
+        }
+
+        if (randomPool.size() == 1) {
+            matches.add(new OneOnOne(getRandomElement(randomPool)));
         }
     }
 

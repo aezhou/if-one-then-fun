@@ -24,8 +24,17 @@ public class OneOnOne {
         this.isRandom = true;
     }
 
+    public OneOnOne(Person x) {
+        this.x = x;
+        this.y = null;
+        this.isRandom = false;
+    }
+
     @Override
     public String toString(){
+        if (y == null) {
+            return "unmatched: " + x.toString();
+        }
         return String.format("%s <-> %s", x.toString(), y.toString()) + (isRandom ? " for fun :)" : " for team bonding");
     }
 }

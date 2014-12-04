@@ -37,5 +37,12 @@
             "tom@petty.org",
             "roy@orbison.org"
         ]
-    }
+    },
+
+    {
+            "name": "Sad Face",
+            "members": [
+                "pizza@pie.edu"
+            ]
+        }
 ]
