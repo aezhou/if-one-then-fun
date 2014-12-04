@@ -20,10 +20,10 @@ public class Main {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         while(true){
-            System.out.print("Press enter to get next batch of matches, or 'exit' to quit...");
+            System.out.print("Press enter to get next batch of matches, or 'exit' to quit: ");
             String input = bufferedReader.readLine();
             if ("exit".equals(input)){
-                System.out.println("goodbye :(");
+                System.out.println("goodbye!");
                 return;
             } else {
                 System.out.println(matcher.getNextMatches().toString().replace(", ", ",\n")+"\n");

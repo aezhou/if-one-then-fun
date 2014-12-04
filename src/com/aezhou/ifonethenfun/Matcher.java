@@ -153,7 +153,7 @@ public class Matcher {
         Set<Person> possibleMatches = getPossibleMatches(gettingMatched, matched);
         Person matchedWith = possibleMatches.size() > 0 ? getRandomElement(possibleMatches) : null;
 
-        OneOnOne match = new OneOnOne(gettingMatched, matchedWith);
+        OneOnOne match = new OneOnOne(gettingMatched, matchedWith, false);
 
         if (matchedWith != null) {
             matched.add(gettingMatched);

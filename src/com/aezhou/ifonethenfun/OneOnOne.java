@@ -12,16 +12,10 @@ public class OneOnOne {
     public final Person y;
     boolean isRandom;
 
-    public OneOnOne(Person x, Person y) {
-        this.x = x;
-        this.y = y;
-        this.isRandom = false;
-    }
-
     public OneOnOne(Person x, Person y, boolean isRandom) {
         this.x = x;
         this.y = y;
-        this.isRandom = true;
+        this.isRandom = isRandom;
     }
 
     public OneOnOne(Person x) {
