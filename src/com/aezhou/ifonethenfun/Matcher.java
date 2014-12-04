@@ -3,7 +3,11 @@ package com.aezhou.ifonethenfun;
 import java.util.*;
 
 /**
- * Class for the Matcher
+ * Class that actually calculates the different one on ones.
+ *
+ * MATCHING_THRESHOLD is a percentage of the company's employees, where X% if the company is "fully matched," we start
+ *   the matching process over. (Fully matched means a person has been matched with all possible team mates, across all
+ *   teams. Starting the matching process over means that an employee will begin trying to match with team mates again.
  */
 public class Matcher {
     private Organization organization;
@@ -23,7 +27,8 @@ public class Matcher {
     public Set<OneOnOne> getNextMatches(){
         // If enough people have been fully matched, then start a new cycle of matches
         if (done.size() >= MATCHING_THRESHOLD * organization.getEmployees().size()) {
-            System.out.println(String.format("\nMore than %.2f of employees are done rotating. Resetting matching...\n", MATCHING_THRESHOLD));
+            System.out.println(String.format("\nMore than %.2f of employees are done rotating. Resetting matching...\n",
+                    MATCHING_THRESHOLD));
             resetMatchingData();
         }
 

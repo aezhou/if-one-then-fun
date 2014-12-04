@@ -1,7 +1,11 @@
 package com.aezhou.ifonethenfun;
 
 /**
- * Class for tuples
+ * Class representing the match itself.
+ *
+ * isRandom is a flag that is true when the match is made "at random" - a person gets a random match when either he/she
+ *   has been matched with all of his possible teammates or if all of his/her possible teammates have already been
+ *   matched with in this round of matching.
  */
 public class OneOnOne {
     public final Person x;
@@ -22,6 +26,6 @@ public class OneOnOne {
 
     @Override
     public String toString(){
-        return String.format("%s <-> %s", x.toString(), y.toString()) + (isRandom ? " for fun :)" : " for work :|");
+        return String.format("%s <-> %s", x.toString(), y.toString()) + (isRandom ? " for fun :)" : " for team bonding");
     }
 }

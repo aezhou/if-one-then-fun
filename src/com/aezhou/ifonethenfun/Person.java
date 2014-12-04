@@ -4,12 +4,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Class for the employee
+ * Class representing the employee.
+ *
+ * Each employee has a unique identifying email and a set of all their teammates.
  */
 public class Person {
     public final String email;
     public final Set<Person> teammates;
-    private Set<String> teams;
+   //TODO potentially?  private Set<String> teams;
 
     public Person(String email) {
         this.email = email;

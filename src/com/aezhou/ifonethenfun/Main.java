@@ -32,6 +32,14 @@ public class Main {
 
     }
 
+    /**
+     *
+     * @param teamsJson
+     * @return a map that maps a team name (String) to the set of employees in the team (Set of Person)
+     *
+     * This method creates a new instance of a Person if and only if the team member is a new employee (aka he/she has
+     *   not been created yet).
+     */
     private static Map<String, Set<Person>> getTeamsFromJSON(JSONArray teamsJson){
         Map<String, Set<Person>> teams = new HashMap<>();
         Map<String, Person> employees = new HashMap<>();
