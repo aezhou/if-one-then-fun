@@ -87,8 +87,8 @@ public class Matcher {
      * Creates random matches within a set of people - will make as many matches as possible. If the set contains an
      * number of people, one person will not have a matching.
      *
-     * @param randomPool set of employees (Person)
-     * @param matches collection of matches - any match made will be added to this
+     * @param randomPool nonnull set of employees (Person)
+     * @param matches nonnull collection of matches - any match made will be added to this
      */
     private void createRandomMatches(Set<Person> randomPool, Collection<OneOnOne> matches) {
         while (randomPool.size() > 1) {
@@ -127,7 +127,7 @@ public class Matcher {
 
     /**
      * Gets a random person from a set of Person
-     * @param s set of Person
+     * @param s nonempty set of Person
      * @return a random Person from the set
      */
     public Person getRandomElement(Set<Person> s) {
@@ -145,8 +145,8 @@ public class Matcher {
      * of all people who have been matched in this round and the global matching tables (potentialMatches and
      * alreadyMatched).
      *
-     * @param gettingMatched Person getting matched
-     * @param matched set of people who have been matched already in this round
+     * @param gettingMatched nonnull Person getting matched
+     * @param matched nonnull set of people who have been matched already in this round
      * @return a matching (OneOnOne)
      */
     public OneOnOne createMatchWithUnmatchedTeammate(Person gettingMatched, Set<Person> matched) {
